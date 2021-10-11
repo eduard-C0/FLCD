@@ -1,0 +1,35 @@
+Syntax:
+program = decllist stmtlist 
+decllist = declaration | declaration “;” decllist
+declaration = “init” type IDENTIFIER
+type = type1 | arrayDeclaration
+type1 = “Boolean”| “Int” | “Char” | “String”
+arrayDeclaration = “array” “[” number “]” type1
+number = digit{digitsWithZero}
+digit = 1|2|3...|9
+digitsWithZero = 0|digit
+stmtList = {stmt ”;”}
+stmt = simpleStmt | nestedStmt
+simpleStmt = assignStmt | ioStmt
+assignStmt = IDENTIFIER “=” expression “;”
+expression = expression (“+” | “-”)  term | term | string | boolean
+boolean = “true” | “false”
+string = char | char {char}
+char = letter | digit
+letter = “a”|”b”|”c”|...|”z”|”A”|”B”|...|”Z”
+digit = “0”|”1”|...|”9” 
+term = term (“/” | “*”) factor | factor “;”
+factor  = “(“ expression “)” | IDENTIFIER
+ioStmt = IDENTIFIER “=” ioExpression “;”
+ioExpression = “read()” | “print(“ expression “)”
+nestedStmt = stmtList | ifStmt | forStmt “;”
+ifStmt = “If” conditionList “{” stmt “}” [“otherwise” “{” stmt “}”]
+conditionList = condition | condition (“AND” | “OR”) {condition}
+condition = expression RELATION expression
+RELATION = “<” | “>” | “<=” | “>=” | “!=” | “==”
+forStmt = “for” + “(” + IDENTIFIER | assignStmt + “;” + condition + “;” + assignStmt + “)” 
++ “{” stmtList + “}” 
+
+
+
+ 

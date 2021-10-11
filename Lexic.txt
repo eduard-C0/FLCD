@@ -1,0 +1,70 @@
+Special symbols representing
+Operators:
++
+-
+*
+/
+<
+>
+<=
+>=
+=
+==
+%
+!
+!=
+&&
+||
+Separators:
+;
+Space
+,
+{}
+()
+[]
+Reserved words:
+int
+char
+string
+boolean
+read
+print
+if
+otherwise
+for
+while
+init
+true
+false
+array
+
+
+
+Identifiers:
+identifier = letter|letter{letter}{digit}
+letter = “a”|”b”|”c”|...|”z”|“A”|”B”|”C”|...|”Z”
+digit = “0”|”1”|”2”|...|”9”
+
+Constants:
+
+integer 
+integer:= 0 | [“-”]digit{digitsWithZero}
+number = digit{number}
+digit = 1|2|3|...|9
+digitsWithZero = 0|1|2|3|...|9
+
+character
+character = ‘letter | digit ‘
+letter = “a”|”b”|...|”z”|”A”|”B”|...|”Z”
+digit = “0”|”1”|...|”9”
+
+string 
+constchar = “string”
+string = char{string}
+char = letter | digit
+letter = “a”|”b”|...|”z”|”A”|”B”|...|”Z”
+digit = “0”|”1”|...|”9”
+
+boolean
+boolean = true | false 
+
