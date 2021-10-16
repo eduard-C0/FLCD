@@ -1,0 +1,62 @@
+Cosma Eduard 
+932/2
+
+Problem 1
+
+init int a;
+init int b;
+if(a < b){
+print(a)
+}
+otherwise{
+print(b)
+}
+
+Problem 2
+
+init int a;
+init boolean b;
+if(a <= 1){
+print(“Not prime”);
+}
+otherwise if(a == 2){
+print(“Prime”);
+}
+otherwise if(a % 2 == 0) {
+print(“Not prime”);
+}
+otherwise{
+for int i = 3; i*i <= a; i = i + 2 {
+	if(a % i == 0){
+	b = false;
+}
+}
+}
+
+if(b == true){
+print(“Prime”);
+}
+otherwise{
+print(“Not prime”);
+}
+
+Problem 3
+init int a;
+init int sum;
+sum = 0;
+for int i = 1; i <= a; i = i + 1{
+	sum = sum + i;
+}
+print(sum)
+
+Problem 3 with lexical errors
+init int ‘a;
+init int sum;
+sum = 0;
+for int i = 1; i @a; i = i + 1{
+	sum = sum + i;
+}
+print(sum)
+Lexical errors: 1. init int ‘a;
+	           2.  i @a
+
