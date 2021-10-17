@@ -48,7 +48,7 @@ digit = “0”|”1”|”2”|...|”9”
 Constants:
 
 integer 
-integer:= 0 | [“-”]digit{digitsWithZero}
+integer = 0 | [“-”]digit{digitsWithZero}
 number = digit{number}
 digit = 1|2|3|...|9
 digitsWithZero = 0|1|2|3|...|9
