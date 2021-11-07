@@ -1,5 +1,8 @@
 package model;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -9,6 +12,7 @@ import java.util.Queue;
 public class SymbolTable {
 
     private Node root;
+    private String fileName = "SymbolTable.out";
 
     /**
      * This method returns a position of a token or if the token doesn't exist in the symbol table
@@ -105,6 +109,21 @@ public class SymbolTable {
             Node currentNode = queue.remove();
             currentNode.valueOfNode = index;
             index += 1;
+        }
+    }
+
+    public void writeToFile(){
+        Queue<Node> queue = new LinkedList<Node>();
+        inorderTraversal(this.root,queue);
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            while (!queue.isEmpty()){
+                Node currentNode = queue.remove();
+                writer.write(currentNode.key + ":" + currentNode.valueOfNode + '\n');
+            }
+            writer.close();
+        }catch (IOException error){
+            error.printStackTrace();
         }
     }
 

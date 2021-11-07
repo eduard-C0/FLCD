@@ -1,0 +1,8 @@
+init int a = 10;
+init int b = 11;
+if (a < b) {
+print(a);
+}
+otherwise{
+print(b);
+}
