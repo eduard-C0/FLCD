@@ -112,7 +112,12 @@ public class Grammar {
                 checker.set(false);
             }
         });
-       return checker.get();
+        return checker.get();
 
+    }
+
+    public List<String> getFirstProduction(String nonTerminal) {
+        return productions.stream().filter(production -> production.getLeft().size() == 1 && production.getLeft().get(0)
+                .equals(nonTerminal)).findFirst().get().getRight();
     }
 }
