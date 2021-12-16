@@ -12,6 +12,10 @@ public class GrammarElement {
         this.indexOfTheElement = indexOfTheElement;
     }
 
+    @Override
+    public String toString() {
+        return element;
+    }
 
     public String getElement() {
         return element;
