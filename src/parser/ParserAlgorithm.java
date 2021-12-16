@@ -40,7 +40,7 @@ public class ParserAlgorithm {
             if(parser.getCurrentState().equals(parser.STANDARD_STATE)){
                 if(parser.getIndex() == string.size() && parser.getInputStack().isEmpty()){
                     parser.success();
-                    //System.out.println(parser.getInputStack().toString());
+                    System.out.println(parser.getInputStack().toString());
                 }
                 else {
                     if (parser.getInputStack().isEmpty()) {
@@ -49,20 +49,20 @@ public class ParserAlgorithm {
                         GrammarElement grammarElementOfInput = parser.getInputStack().getFirst();
                         if (grammar.getNonTerminals().contains(grammarElementOfInput.getElement())) {
                             parser.expand();
-                           // System.out.println(parser.getInputStack().toString());
+                            System.out.println(parser.getInputStack().toString());
                         } else {
                             if (string.size() <= parser.getIndex()) {
                                 parser.insuccess();
-                               // System.out.println(parser.getInputStack().toString());
+                                System.out.println(parser.getInputStack().toString());
                             }
                             else{
                                 String character = string.get(parser.getIndex());
                                 if (grammarElementOfInput.getElement().equals(character)) {
                                     parser.advance();
-                                   // System.out.println(parser.getInputStack().toString());
+                                    System.out.println(parser.getInputStack().toString());
                                 } else {
                                     parser.insuccess();
-                                  //  System.out.println(parser.getInputStack().toString());
+                                    System.out.println(parser.getInputStack().toString());
                                 }
                             }
                         }
@@ -74,10 +74,10 @@ public class ParserAlgorithm {
                     GrammarElement grammarElementOfToDo = parser.getTodoStack().getLast();
                     if(grammar.getTerminals().contains(grammarElementOfToDo.getElement())){
                         parser.back();
-                        //System.out.println(parser.getInputStack().toString());
+                        System.out.println(parser.getInputStack().toString());
                     }else {
                         parser.tryAgain();
-                        //System.out.println(parser.getInputStack().toString());
+                        System.out.println(parser.getInputStack().toString());
                     }
                 }
             }
