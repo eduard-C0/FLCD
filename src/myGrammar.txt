@@ -1,0 +1,23 @@
+Terminals
+init
+identifier
+;
+boolean
+int
+char
+string
+integer
+Nonterminals
+P
+D
+DL
+T
+E
+Starting
+P
+Productions
+P->DL
+DL->D ;|D ; DL
+D->init T identifier = E
+E->integer|string|identifier
+T->boolean|int|char|string

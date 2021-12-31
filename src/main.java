@@ -40,8 +40,9 @@ public class main {
 //        }
 
 
-        ParserAlgorithm parserAlgorithm = new ParserAlgorithm("src/grammar.in");
-        List<String> sequence = readFromFile("src/sequence.txt");
+        ParserAlgorithm parserAlgorithm = new ParserAlgorithm("src/myGrammar.txt");
+        List<String> sequence = readFromFile("src/Pif.txt");
+        System.out.println(sequence);
         System.out.println(parserAlgorithm.parseAlgorithm(sequence));
     }
 
@@ -53,7 +54,7 @@ public class main {
             Scanner scanner = new Scanner(file);
             while(scanner.hasNextLine()){
                 String line =  scanner.nextLine();
-                String[] splitBySpace = line.split(" ");
+                String[] splitBySpace = line.split(":");
                 String element = splitBySpace[0];
                 stringList.add(element);
             }
